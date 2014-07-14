@@ -21,7 +21,8 @@ function checkMatchCount {
 	NEXPECT=$2
 
 	matches=`grep "$PATTERN"`
-	[ $NEXPECT -eq `echo "$matches" | wc -l` ] && echo "PASS" || { echo "FAIL" ; echo "  actual matching outputs:" ; echo "$matches" | sed 's/^/    /' ; }
+	nmatch=`echo "$matches" | wc -l`
+	[ $NEXPECT -eq $nmatch ] && echo "PASS, $nmatch/$NEXPECT" || { echo "FAIL, $nmatch/$NEXPECT" ; echo "  actual matching outputs:" ; echo "$matches" | sed 's/^/    /' ; }
 }
 
 testProject web 3
