@@ -25,7 +25,7 @@
             description="Creates distributable (includes dependencies)"
             unless="norecurse">
         <echo>dist.dependencies for ${ant.project.name} entering ==&gt;</echo>
-        <antcall target="delegate.${ant.project.name}">
+        <antcall target="delegate.${ant.project.name}.dependencies">
             <param name="delegate.target" value="dist"/>
         </antcall>
         <echo>&lt;== dist.dependencies for ${ant.project.name} returned</echo>

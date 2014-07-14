@@ -33,13 +33,15 @@
     </target>
     <!-- ================================================================== -->
     <target name="delegate.web"
-            depends="delegate.model, delegate.utilities">
+            depends="delegate.web.dependencies">
         <ant dir="${dependencies.basedir}/web"
              target="${delegate.target}" 
              inheritAll="false">
              <property name="norecurse" value="true"/>
          </ant>
     </target>
+    <target name="delegate.web.dependencies"
+        depends="delegate.model, delegate.utilities"/>
     <!--
         The 'delegate.*' targets proxy out some single task call ('${delegate.target}') to *every*
         ...
