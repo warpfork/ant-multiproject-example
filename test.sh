@@ -10,7 +10,7 @@ function testProject {(
 	echo ====
 	echo -n "project '$PROJECT' occurances of 'compile'    ...   " ; echo "$output" | checkMatchCount "^compile:$" "$DEPCOUNT"
 	echo -n "project '$PROJECT' occurances of 'dist'       ...   " ; echo "$output" | checkMatchCount "^dist:$"    "$DEPCOUNT"
-	echo -n "project '$PROJECT' occurances of 'delegate.*' ...   " ; echo "$output" | checkMatchCount "^delegate." "$DEPCOUNT"
+	echo -n "project '$PROJECT' occurances of 'delegate.*' ...   " ; echo "$output" | checkMatchCount "^delegate." "$(($DEPCOUNT * 2 - 1))"
 	echo ====
 	echo
 )}
