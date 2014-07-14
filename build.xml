@@ -3,6 +3,13 @@
 <project name="sample" default="dist">
 	<import file="dependencies.xml"/>
 
+	<macrodef name="lol">
+		<sequential>
+			<echo>hullo, please note that macrodefs can still be inherited across &lt;ant&gt; calls without redeclaration or overhead.</echo>
+		</sequential>
+	</macrodef>
+	<lol/>
+
 	<target name="clean" description="Deletes build files">
 		<antcall target="delegate.all">
 			<param name="delegate.target" value="clean"/>
