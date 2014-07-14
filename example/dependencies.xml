@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <project name="dependencies" default="delegate.all">
-    <dirname property="dependencies.basedir" file="${ant.file.dependencies}"/>
-    <!-- ================================================================== -->
-    <target name="delegate.all"
-            depends="delegate.admin, delegate.web">
-    </target>
-    <!-- ================================================================== -->
-    <target name="delegate.admin"
-            depends="delegate.model, delegate.utilities">
-        <ant dir="${dependencies.basedir}/admin"
-             target="${delegate.target}" 
-             inheritAll="false">
-             <property name="norecurse" value="true"/>
-         </ant>
-    </target>
-    <!-- ================================================================== -->
-    <target name="delegate.model"
-            depends="delegate.utilities">
-        <ant dir="${dependencies.basedir}/model"
-             target="${delegate.target}" 
-             inheritAll="false">
-             <property name="norecurse" value="true"/>
-         </ant>
-    </target>
-    <!-- ================================================================== -->
-    <target name="delegate.utilities">
-        <ant dir="${dependencies.basedir}/utilities"
-             target="${delegate.target}" 
-             inheritAll="false">
-             <property name="norecurse" value="true"/>
-         </ant>
-    </target>
-    <!-- ================================================================== -->
-    <target name="delegate.web"
-            depends="delegate.web.dependencies">
-        <ant dir="${dependencies.basedir}/web"
-             target="${delegate.target}" 
-             inheritAll="false">
-             <property name="norecurse" value="true"/>
-         </ant>
-    </target>
-    <target name="delegate.web.dependencies"
-        depends="delegate.model, delegate.utilities"/>
-    <!--
-        The 'delegate.*' targets proxy out some single task call ('${delegate.target}') to *every*
-        ...
-        Ah, so the fact that these target's depends relationships are all in the driving ant means they don't repeat in case of a diamond.
-        Well, that explains why having each build call its own dependencies wouldn't work with this approach.
-    -->
+	<dirname property="dependencies.basedir" file="${ant.file.dependencies}"/>
+	<!-- ================================================================== -->
+	<target name="delegate.all"
+			depends="delegate.admin, delegate.web">
+	</target>
+	<!-- ================================================================== -->
+	<target name="delegate.admin"
+			depends="delegate.model, delegate.utilities">
+		<ant dir="${dependencies.basedir}/admin"
+			 target="${delegate.target}" 
+			 inheritAll="false">
+			 <property name="norecurse" value="true"/>
+		 </ant>
+	</target>
+	<!-- ================================================================== -->
+	<target name="delegate.model"
+			depends="delegate.utilities">
+		<ant dir="${dependencies.basedir}/model"
+			 target="${delegate.target}" 
+			 inheritAll="false">
+			 <property name="norecurse" value="true"/>
+		 </ant>
+	</target>
+	<!-- ================================================================== -->
+	<target name="delegate.utilities">
+		<ant dir="${dependencies.basedir}/utilities"
+			 target="${delegate.target}" 
+			 inheritAll="false">
+			 <property name="norecurse" value="true"/>
+		 </ant>
+	</target>
+	<!-- ================================================================== -->
+	<target name="delegate.web"
+			depends="delegate.web.dependencies">
+		<ant dir="${dependencies.basedir}/web"
+			 target="${delegate.target}" 
+			 inheritAll="false">
+			 <property name="norecurse" value="true"/>
+		 </ant>
+	</target>
+	<target name="delegate.web.dependencies"
+		depends="delegate.model, delegate.utilities"/>
+	<!--
+		The 'delegate.*' targets proxy out some single task call ('${delegate.target}') to *every*
+		...
+		Ah, so the fact that these target's depends relationships are all in the driving ant means they don't repeat in case of a diamond.
+		Well, that explains why having each build call its own dependencies wouldn't work with this approach.
+	-->
 </project>
