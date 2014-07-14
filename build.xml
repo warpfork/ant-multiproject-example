@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ant-project>
+<project name="project-herpaderp" default="blue.dist">
+	<property name="workset.basedir" value="${basedir}"/>
+
+	<include file="${workset.basedir}/blue/build.xml"/>
+	<include file="${workset.basedir}/green/build.xml"/>
+	<include file="${workset.basedir}/cyan/build.xml"/>
+</project>
