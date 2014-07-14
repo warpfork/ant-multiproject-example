@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ant-project>
-<project name="dependencies" default="delegate.all">
+<project name="dependencies">
 	<dirname property="dependencies.basedir" file="${ant.file.dependencies}"/>
 	<!-- ================================================================== -->
 	<target name="delegate.all"
