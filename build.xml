@@ -6,7 +6,6 @@
 
 	<defines/>
 	<lol/>
-	<echo> once, r u serious </echo>
 
 	<target name="clean" description="Deletes build files">
 		<antcall target="delegate.all">
