@@ -21,7 +21,7 @@ function testProject {(
 testProject web 3
 testProject admin 3
 testProject model 2
-testProject utilities 3
+testProject utilities 1
 testProject . 4
 
 
