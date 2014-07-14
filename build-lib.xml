@@ -14,10 +14,10 @@
 		<sequential if:set="defines.complete"/>
 		<sequential unless:set="defines.complete">
 			<property name="once.defines" value="true"/>
-			<echo>performing one-time setup.</echo>
+			<echo>hullo, performing one-time setup.</echo>
 			<macrodef name="lol">
 				<sequential>
-					<echo>macrodef inherited.</echo>
+					<echo>hullo, macrodef inherited.</echo>
 				</sequential>
 			</macrodef>
 		</sequential>
