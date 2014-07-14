@@ -16,4 +16,5 @@
 			</macrodef>
 		</sequential>
 	</macrodef>
+	<defines/>
 </project>

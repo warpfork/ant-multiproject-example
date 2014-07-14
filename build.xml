@@ -4,7 +4,6 @@
 	<import file="dependencies.xml"/>
 	<import file="build-lib.xml"/>
 
-	<defines/>
 	<lol/>
 
 	<target name="clean" description="Deletes build files">
