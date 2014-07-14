@@ -11,9 +11,7 @@
         <ant dir="${dependencies.basedir}/admin"
              target="${delegate.target}" 
              inheritAll="false">
-             <propertyset>
-                <propertyref prefix="dist.dependencies"/>
-             </propertyset>
+             <property name="norecurse" value="true"/>
          </ant>
     </target>
     <!-- ================================================================== -->
@@ -22,9 +20,7 @@
         <ant dir="${dependencies.basedir}/model"
              target="${delegate.target}" 
              inheritAll="false">
-             <propertyset>
-                <propertyref prefix="dist.dependencies"/>
-             </propertyset>
+             <property name="norecurse" value="true"/>
          </ant>
     </target>
     <!-- ================================================================== -->
@@ -32,9 +28,7 @@
         <ant dir="${dependencies.basedir}/utilities"
              target="${delegate.target}" 
              inheritAll="false">
-             <propertyset>
-                <propertyref prefix="dist.dependencies"/>
-             </propertyset>
+             <property name="norecurse" value="true"/>
          </ant>
     </target>
     <!-- ================================================================== -->
@@ -43,9 +37,7 @@
         <ant dir="${dependencies.basedir}/web"
              target="${delegate.target}" 
              inheritAll="false">
-             <propertyset>
-                <propertyref prefix="dist.dependencies"/>
-             </propertyset>
+             <property name="norecurse" value="true"/>
          </ant>
     </target>
     <!--
