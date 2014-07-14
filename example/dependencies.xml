@@ -32,4 +32,10 @@
              target="${dependency.target}" 
              inheritAll="false"/>
     </target>
+    <!--
+        The 'depend.*' targets proxy out some single task call ('${dependency.target}') to *every*
+        ...
+        Ah, so the fact that these target's depends relationships are all in the driving ant means they don't repeat in case of a diamond.
+        Well, that explains why having each build call its own dependencies wouldn't work with this approach.
+    -->
 </project>
