@@ -11,6 +11,8 @@ function testProject {(
 	echo -n "project '$PROJECT' occurances of 'compile'    ...   " ; echo "$output" | checkMatchCount "^compile:$" "$DEPCOUNT"
 	echo -n "project '$PROJECT' occurances of 'dist'       ...   " ; echo "$output" | checkMatchCount "^dist:$"    "$DEPCOUNT"
 	echo -n "project '$PROJECT' occurances of 'delegate.*' ...   " ; echo "$output" | checkMatchCount "^delegate." "$(($DEPCOUNT * 2 - 1))"
+	echo -n "project '$PROJECT' has all unique delegates   ...   " ; [ 0 -eq `echo "$output" | grep "^delegate." | sort | uniq -d | wc -l` ] && echo "PASS" || echo "FAIL"
+	echo -n "project '$PROJECT' has all unique delegatedeps...   " ; [ 0 -eq `echo "$output" | grep "^delegate.*.dependencies:$" | sort | uniq -d | wc -l` ] && echo "PASS" || echo "FAIL"
 	echo ====
 	echo
 )}
