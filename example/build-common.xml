@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project name="build-common" default="dist"
-    xmlns:if="ant:if"
-    xmlns:unless="ant:unless"
-    >
+<project name="build-common" default="dist">
     <import file="dependencies.xml"/>
 
     <target name="clean" description="Deletes files created during the build">
@@ -13,10 +10,8 @@
         <echo message="${ant.project.name} - build-common.compile"/>
     </target>
 
-    <target name="dist" depends="compile" description="Creates distributable">
+    <target name="dist" depends="dist.dependencies, compile" description="Creates distributable">
         <echo message="${ant.project.name} - build-common.dist"/>
-        <echo> lol?  ${dist.dependencies.once}</echo>
-        <antcall target="dist.dependencies" unless:set="dist.dependencies.once"/>
     </target>
 
     <target name="clean.dependencies" 
@@ -27,7 +22,8 @@
     </target>
 
     <target name="dist.dependencies"
-            description="Creates distributable (includes dependencies)">
+            description="Creates distributable (includes dependencies)"
+            unless="dist.dependencies.once">
         <property name="dist.dependencies.once" value="yes"/>
         <antcall target="delegate.${ant.project.name}">
             <param name="delegate.target" value="dist"/>
