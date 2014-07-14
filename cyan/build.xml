@@ -2,4 +2,16 @@
 <!DOCTYPE ant-project>
 <project name="cyan" default="dist">
 	<import file="${workset.basedir}/build-common.xml"/>
+
+	<target name="clean" description="Deletes files created during the build">
+		<echo message="${ant.project.name} - build-common.clean"/>
+	</target>
+
+	<target name="compile" description="Compiles source code">
+		<echo message="${ant.project.name} - build-common.compile"/>
+	</target>
+
+	<target name="dist" depends="compile" description="Creates distributable">
+		<echo message="${ant.project.name} - build-common.dist"/>
+	</target>
 </project>
