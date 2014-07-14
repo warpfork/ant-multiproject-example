@@ -15,6 +15,7 @@ function testProject {(
 	echo -n "project '$PROJECT' occurances of 'delegate.*' ...   "
 	[ $DEPCOUNT -eq `echo "$output" | grep "^delegate." -c` ] && echo "PASS" || echo "FAIL"
 	echo ====
+	echo
 )}
 
 testProject web 3
