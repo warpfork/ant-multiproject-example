@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ant-project>
-<project name="build-lib">
+<project name="build-lib"
+	xmlns:unless="ant:unless"
+	xmlns:if="ant:if"
+	>
 	<macrodef name="defines">
-		<sequential>
+		<sequential if:set="once.defines"/>
+		<sequential unless:set="once.defines">
+			<property name="once.defines" value="true"/>
 			<echo>hullo, please note that the following macrodef declaration takes place exactly once.</echo>
 			<macrodef name="lol">
 				<sequential>
