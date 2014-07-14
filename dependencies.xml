@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ant-project>
 <project name="dependencies" default="delegate.all">
 	<dirname property="dependencies.basedir" file="${ant.file.dependencies}"/>
 	<!-- ================================================================== -->
