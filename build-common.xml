@@ -18,15 +18,18 @@
 	</target>
 
 	<target name="clean.dependencies" 
-			description="Deletes files created during the build (includes dependencies)">
-		<antcall target="delegate.${ant.project.name}">
+		description="Deletes files created during the build (includes dependencies)"
+		unless="norecurse"
+		>
+		<antcall target="delegate.${ant.project.name}.dependencies">
 			<param name="delegate.target" value="clean"/>
 		</antcall>
 	</target>
 
 	<target name="dist.dependencies"
-			description="Creates distributable (includes dependencies)"
-			unless="norecurse">
+		description="Creates distributable (includes dependencies)"
+		unless="norecurse"
+		>
 		<echo>dist.dependencies for ${ant.project.name} entering ==&gt;</echo>
 		<antcall target="delegate.${ant.project.name}.dependencies">
 			<param name="delegate.target" value="dist"/>
