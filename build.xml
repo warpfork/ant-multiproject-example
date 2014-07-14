@@ -2,7 +2,6 @@
 <!DOCTYPE ant-project>
 <project name="sample" default="dist">
 	<import file="dependencies.xml"/>
-	<import file="build-lib.xml"/>
 
 	<lol/>
 

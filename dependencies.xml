@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ant-project>
 <project name="dependencies">
+	<import file="build-lib.xml"/>
 	<dirname property="dependencies.basedir" file="${ant.file.dependencies}"/>
 
 

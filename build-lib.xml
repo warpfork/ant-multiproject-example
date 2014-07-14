@@ -4,9 +4,15 @@
 	xmlns:unless="ant:unless"
 	xmlns:if="ant:if"
 	>
+	<condition property="defines.complete">
+		<or>
+			<isset property="once.defines"/>
+			<isset property="norecurse"/>
+		</or>
+	</condition>
 	<macrodef name="defines">
-		<sequential if:set="once.defines"/>
-		<sequential unless:set="once.defines">
+		<sequential if:set="defines.complete"/>
+		<sequential unless:set="defines.complete">
 			<property name="once.defines" value="true"/>
 			<echo>hullo, please note that the following macrodef declaration takes place exactly once.</echo>
 			<macrodef name="lol">
