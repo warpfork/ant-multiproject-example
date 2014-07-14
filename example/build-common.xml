@@ -10,7 +10,7 @@
         <echo message="${ant.project.name} - build-common.compile"/>
     </target>
 
-    <target name="dist" depends="compile" description="Creates distributable">
+    <target name="dist" depends="dist.dependencies, compile" description="Creates distributable">
         <echo message="${ant.project.name} - build-common.dist"/>
     </target>
 
