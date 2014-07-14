@@ -13,29 +13,28 @@
 
 
 
-	<target name="delegate.all"
-			depends="delegate.admin, delegate.web">
+	<target name="delegate.all" depends="delegate.admin, delegate.web">
 	</target>
 
 
 
-	<target name="delegate.admin"
-			depends="delegate.model, delegate.utilities">
+	<target name="delegate.admin" depends="delegate.model, delegate.utilities">
 		<ant dir="${dependencies.basedir}/admin"
-			 target="${delegate.target}" 
-			 inheritAll="false">
-			 <property name="norecurse" value="true"/>
+			target="${delegate.target}"
+			inheritAll="false"
+			>
+			<property name="norecurse" value="true"/>
 		 </ant>
 	</target>
 
 
 
-	<target name="delegate.model"
-			depends="delegate.utilities">
+	<target name="delegate.model" depends="delegate.utilities">
 		<ant dir="${dependencies.basedir}/model"
-			 target="${delegate.target}" 
-			 inheritAll="false">
-			 <property name="norecurse" value="true"/>
+			target="${delegate.target}"
+			inheritAll="false"
+			>
+			<property name="norecurse" value="true"/>
 		 </ant>
 	</target>
 
@@ -43,20 +42,21 @@
 
 	<target name="delegate.utilities">
 		<ant dir="${dependencies.basedir}/utilities"
-			 target="${delegate.target}" 
-			 inheritAll="false">
-			 <property name="norecurse" value="true"/>
+			target="${delegate.target}"
+			inheritAll="false"
+			>
+			<property name="norecurse" value="true"/>
 		 </ant>
 	</target>
 
 
 
-	<target name="delegate.web"
-			depends="delegate.web.dependencies">
+	<target name="delegate.web" depends="delegate.web.dependencies">
 		<ant dir="${dependencies.basedir}/web"
-			 target="${delegate.target}" 
-			 inheritAll="false">
-			 <property name="norecurse" value="true"/>
+			target="${delegate.target}"
+			inheritAll="false"
+			>
+			<property name="norecurse" value="true"/>
 		 </ant>
 	</target>
 	<target name="delegate.web.dependencies"
