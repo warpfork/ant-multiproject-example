@@ -14,6 +14,8 @@ function testProject {(
 	echo -n "project '$PROJECT' occurances of 'delegate.*' ...   " ; echo "$output" | checkMatchCount "^delegate." "$(($NNODE * 2 - 1))"
 	echo -n "project '$PROJECT' has all unique delegates   ...   " ; [ 0 -eq `echo "$output" | grep "^delegate." | sort | uniq -d | wc -l` ] && echo "PASS" || echo "FAIL"
 	echo -n "project '$PROJECT' has all unique delegatedeps...   " ; [ 0 -eq `echo "$output" | grep "^delegate.*.dependencies:$" | sort | uniq -d | wc -l` ] && echo "PASS" || echo "FAIL"
+	echo -n "project '$PROJECT' did one-time setup once    ...   " ; [ 1 -eq `echo "$output" | grep "performing one-time setup.$" | wc -l` ] && echo "PASS" || echo "FAIL"
+	echo -n "project '$PROJECT' used macro repeatedly      ...   " ; [ 1 -lt `echo "$output" | grep "macrodef inherited.$" | wc -l` ] && echo "PASS" || echo "FAIL"
 	echo ====
 	echo
 )}

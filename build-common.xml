@@ -14,6 +14,7 @@
 
 	<target name="dist" depends="dist.dependencies, compile" description="Creates distributable">
 		<echo message="${ant.project.name} - build-common.dist"/>
+		<lol/>
 	</target>
 
 	<target name="clean.dependencies" 

@@ -14,10 +14,10 @@
 		<sequential if:set="defines.complete"/>
 		<sequential unless:set="defines.complete">
 			<property name="once.defines" value="true"/>
-			<echo>hullo, please note that the following macrodef declaration takes place exactly once.</echo>
+			<echo>performing one-time setup.</echo>
 			<macrodef name="lol">
 				<sequential>
-					<echo>hullo, please note that macrodefs can still be inherited across &lt;ant&gt; calls without redeclaration or overhead.</echo>
+					<echo>macrodef inherited.</echo>
 				</sequential>
 			</macrodef>
 		</sequential>
