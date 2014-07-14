@@ -16,7 +16,7 @@
 	</target>
 
 	<target name="dist" description="Creates distributable">
-		<antcall target="delegate.all">
+		<antcall target="delegate.all.dependencies">
 			<param name="delegate.target" value="dist"/>
 		</antcall>
 	</target>
