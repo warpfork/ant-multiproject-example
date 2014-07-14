@@ -10,27 +10,43 @@
             depends="delegate.model, delegate.utilities">
         <ant dir="${dependencies.basedir}/admin"
              target="${delegate.target}" 
-             inheritAll="false"/>
+             inheritAll="false">
+             <propertyset>
+                <propertyref prefix="dist.dependencies"/>
+             </propertyset>
+         </ant>
     </target>
     <!-- ================================================================== -->
     <target name="delegate.model"
             depends="delegate.utilities">
         <ant dir="${dependencies.basedir}/model"
              target="${delegate.target}" 
-             inheritAll="false"/>
+             inheritAll="false">
+             <propertyset>
+                <propertyref prefix="dist.dependencies"/>
+             </propertyset>
+         </ant>
     </target>
     <!-- ================================================================== -->
     <target name="delegate.utilities">
         <ant dir="${dependencies.basedir}/utilities"
              target="${delegate.target}" 
-             inheritAll="false"/>
+             inheritAll="false">
+             <propertyset>
+                <propertyref prefix="dist.dependencies"/>
+             </propertyset>
+         </ant>
     </target>
     <!-- ================================================================== -->
     <target name="delegate.web"
             depends="delegate.model, delegate.utilities">
         <ant dir="${dependencies.basedir}/web"
              target="${delegate.target}" 
-             inheritAll="false"/>
+             inheritAll="false">
+             <propertyset>
+                <propertyref prefix="dist.dependencies"/>
+             </propertyset>
+         </ant>
     </target>
     <!--
         The 'delegate.*' targets proxy out some single task call ('${delegate.target}') to *every*
